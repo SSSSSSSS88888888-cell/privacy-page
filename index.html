@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー - GPTサービス</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.05) 20px,
+                rgba(255,255,255,0.05) 40px
+            );
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .tldr-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tldr-section::before {
+            content: '💡';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .tldr-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tldr-section h2::before {
+            content: '⚡';
+            font-size: 1.5rem;
+        }
+
+        .policy-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 30px;
+            position: relative;
+            border-left: 5px solid #667eea;
+        }
+
+        .policy-section::before {
+            content: '📋';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.2;
+        }
+
+        .policy-section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section h2::before {
+            content: '📄';
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #495057;
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+            position: relative;
+        }
+
+        h3::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 8px 0;
+            position: relative;
+        }
+
+        li::marker {
+            content: '▶';
+            color: #667eea;
+        }
+
+        strong {
+            color: #495057;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ff6b6b;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '📞';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+
+        .contact-section h3 {
+            color: #495057;
+            border: none;
+            text-align: center;
+        }
+
+        .contact-section h3::before {
+            display: none;
+        }
+
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin: 5px 0;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .tldr-section, .policy-section {
+                padding: 25px 20px;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
+
+        /* アニメーション効果 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>プライバシーポリシー</h1>
+            <p>GPTサービスにおける個人情報の取扱いについて</p>
+        </div>
+
+        <div class="content">
+            <div class="tldr-section fade-in">
+                <h2>プライバシーの要点（TL;DR）</h2>
+                <ul>
+                    <li>このGPT（「<strong>［GPT名］</strong>」）は、入力された内容を<strong>当社［事業者名］では原則保存しません</strong>。</li>
+                    <li>ただし、<strong>ユーザーが同意のうえ送信した連絡先や課題情報</strong>は、アップセル相談/問い合わせ対応の目的で当社の［CRM/スプレッドシート/メール］に転送されることがあります（転送の前に同意確認を表示します）。</li>
+                    <li>本GPTの会話データは、<strong>OpenAIのサービス上で処理</strong>されます。OpenAIによる取扱いは同社のポリシーに従います。</li>
+                    <li>機微情報（個人番号/健康情報/機密情報）は入力しないでください。</li>
+                    <li>詳細は「プライバシーポリシー（下記リンク）」をご確認ください。</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><strong>データの使途</strong>：一次相談への回答／改善のための匿名統計／（同意時のみ）お問い合わせ対応</p>
+                    <p><strong>保存期間</strong>：お問い合わせに紐づく情報は［○か月］、匿名統計は［○年未満］</p>
+                    <p><strong>お問い合わせ</strong>：［privacy＠example.com］（［事業者名・住所］）</p>
+                </div>
+            </div>
+
+            <div class="policy-section fade-in">
+                <h2>プライバシーポリシー（詳細版）</h2>
+                <p><strong>最終更新日</strong>：［2025-08-25］</p>
+                <p><strong>事業者</strong>：［事業者名］（以下「当社」）</p>
+
+                <h3>1. 適用範囲</h3>
+                <p>本ポリシーは、当社が提供・共有するカスタムGPT「［GPT名］」（以下「本GPT」）の利用における個人情報等の取扱いを定めます。</p>
+
+                <h3>2. 取得する情報</h3>
+                <p>当社が取得し得る情報は、以下のとおりです。</p>
+                
+                <p><strong>（A）原則取得しない情報</strong></p>
+                <ul>
+                    <li>本GPTとの<strong>会話本文</strong>：当社は原則として取得・保存しません。</li>
+                </ul>
+
+                <p><strong>（B）同意時のみ取得する情報</strong>（ユーザーが送信・同意した場合に限る）</p>
+                <ul>
+                    <li>連絡先（氏名、会社名、役職、メール、電話）</li>
+                    <li>相談内容・要件（自由記述、課題カテゴリ、希望プラン等）</li>
+                    <li>技術的メタデータ（送信日時、同意フラグ、転送結果ID）</li>
+                </ul>
+
+                <p><strong>（C）匿名化・統計情報</strong></p>
+                <ul>
+                    <li>利用傾向（質問カテゴリ、クリック、同意率など）。個人を特定できない形で集計します。</li>
+                </ul>
+
+                <h3>3. 取得方法</h3>
+                <ul>
+                    <li>ユーザーの明示的入力（フォーム／同意チェック）</li>
+                    <li>本GPTの「Actions」を通じた<strong>転送（API/Webhook）</strong>：同意がある場合のみ、当社の［CRM/表計算/Slack/メール］に送信します。</li>
+                </ul>
+
+                <h3>4. 利用目的</h3>
+                <ul>
+                    <li>一次相談への回答、ユーザー体験の改善</li>
+                    <li>（同意時のみ）アップセル相談、問い合わせ対応、日程調整</li>
+                    <li>不正・濫用防止、法令遵守、セキュリティ確保</li>
+                    <li>匿名統計の作成・開示（個人が識別されない形）</li>
+                </ul>
+
+                <h3>5. 第三者提供・委託</h3>
+                <ul>
+                    <li>当社は、法令に基づく場合を除き、<strong>ユーザーの同意なく</strong>個人情報を第三者に提供しません。</li>
+                    <li>当社は、システム運用・保守・分析等を<strong>委託</strong>することがあり、委託先に必要な範囲で個人情報を取り扱わせます。委託先の管理水準を確認し、適切に監督します。</li>
+                </ul>
+
+                <h3>6. 国外移転</h3>
+                <ul>
+                    <li>本GPTの動作はOpenAI社のサービスに依存します。個人情報が<strong>国外で処理</strong>される可能性があります。</li>
+                    <li>当社が個人情報を国外の事業者に提供・委託する場合、関連法令に基づく必要な措置を講じます。</li>
+                </ul>
+
+                <h3>7. 保存期間</h3>
+                <ul>
+                    <li>（同意に基づく問い合わせ情報）<strong>取得から［○か月］</strong>を上限に保存し、その後安全に削除・匿名化します。</li>
+                    <li>匿名統計は<strong>個人が特定されない形</strong>で［○年未満］保管します。</li>
+                </ul>
+
+                <h3>8. セキュリティ対策</h3>
+                <ul>
+                    <li>アクセス制御、暗号化、権限管理、ログ監査</li>
+                    <li>委託先に対する契約・監督</li>
+                    <li>インシデント時の報告・再発防止</li>
+                </ul>
+
+                <h3>9. 利用者の権利</h3>
+                <ul>
+                    <li>開示、訂正、削除、利用停止等の請求に対応します（本人確認を行います）。</li>
+                    <li>連絡先：［privacy＠example.com］</li>
+                </ul>
+
+                <h3>10. クッキー等</h3>
+                <ul>
+                    <li>共有ページ／LPでは分析・利便性向上のためクッキー等を利用することがあります。ブラウザ設定で拒否可。ただし一部機能に影響が生じる場合があります。</li>
+                </ul>
+
+                <h3>11. 未成年</h3>
+                <ul>
+                    <li>未成年者が利用する場合は、保護者の同意を得てください。</li>
+                </ul>
+
+                <h3>12. 免責・注意</h3>
+                <ul>
+                    <li>本GPTの回答は<strong>一般情報</strong>であり、最終判断はユーザーの責任で行ってください（法務・税務・医療等は専門家確認が必要）。</li>
+                    <li>ユーザーは、機微情報・企業秘密・第三者の個人情報を入力しないでください。</li>
+                    <li>本GPTの会話データは<strong>OpenAI社のサービス上で処理</strong>されます。OpenAI社によるデータ取扱いについては、同社の規約・ポリシーをご確認ください。</li>
+                </ul>
+
+                <h3>13. 改定</h3>
+                <ul>
+                    <li>本ポリシーは適宜改定されます。最新版は当社の掲示により効力を生じます。</li>
+                </ul>
+
+                <div class="contact-section">
+                    <h3>14. お問い合わせ</h3>
+                    <p><strong>事業者名</strong>：［事業者名］</p>
+                    <p><strong>住所</strong>：［住所］</p>
+                    <p><strong>メール</strong>：［privacy＠example.com］</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 ［事業者名］. All rights reserved.</p>
+            <p>本プライバシーポリシーは、適宜更新されます。</p>
+        </div>
+    </div>
+
+    <div class="scroll-top" id="scrollTop">
+        ↑
+    </div>
+
+    <script>
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // フェードイン要素を監視
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // トップに戻るボタン
+        const scrollTopButton = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopButton.classList.add('visible');
+            } else {
+                scrollTopButton.classList.remove('visible');
+            }
+        });
+
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // スムーススクロール（ページ内リンク用）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
